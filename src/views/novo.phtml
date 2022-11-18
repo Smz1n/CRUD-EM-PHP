@@ -1,0 +1,12 @@
+<h1>Novo</h1>
+<hr>
+
+<form action="" method="post">
+    <label>Nome</label>
+    <input required value="<?php echo $_POST['nome'] ?? '' ?>" type="text" name="nome">
+    <label>Matricula</label>
+    <input required value="<?php echo $_POST['matricula'] ?? '' ?>" type="text" name="matricula">
+    <label>Cidade</label>
+    <input required value="<?php echo $_POST['cidade'] ?? '' ?>" type="text" name="cidade">
+    <button type="submit">Criar</button>
+</form>

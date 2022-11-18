@@ -1,0 +1,40 @@
+<h1>Pagina de listar</h1>
+
+<hr>
+
+<table class="container table table-stripped table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Matricula</th>
+            <th>Cidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+<tbody>
+    <?php
+    foreach ($dados as $row) {
+        $id = $row['id'];
+    echo "<tr>
+        <td>{$row['id']}</td>
+        <td>{$row['nome']}</td>
+        <td>{$row['matricula']}</td>
+        <td>{$row['cidade']}</td>
+        <td>
+            <a href='/editar?id={$id}' class='btn btn-outline-warning'>Editar</a>
+            <a href='#' onclick='confirmar({$id})' class='btn btn-outline-danger'>Excluir</a>
+        </td>
+    </tr>";
+    }
+?>
+</tbody>
+</table>
+
+<script>
+    function confirmar(id) {
+        if (true === confirm('Tem certeza')){
+            location.href = '/excluir?id='+id;
+        }
+    }
+</script>
